@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="The Perfect Fourth American flag logo">
+  <defs>
+    <clipPath id="badge">
+      <rect x="4" y="4" width="56" height="56" rx="14"/>
+    </clipPath>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#18212b"/>
+  <g clip-path="url(#badge)">
+    <rect x="4" y="4" width="56" height="56" fill="#f9f4ec"/>
+    <path d="M4 12h56v5H4zm0 10h56v5H4zm0 10h56v5H4zm0 10h56v5H4zm0 10h56v5H4z" fill="#9c2432"/>
+    <rect x="4" y="4" width="28" height="28" fill="#19324a"/>
+    <g fill="#f9f4ec">
+      <path d="M12 10l1.1 2.2 2.4.4-1.7 1.7.4 2.4-2.2-1.1-2.2 1.1.4-2.4-1.7-1.7 2.4-.4L12 10z"/>
+      <path d="M24 10l1.1 2.2 2.4.4-1.7 1.7.4 2.4-2.2-1.1-2.2 1.1.4-2.4-1.7-1.7 2.4-.4L24 10z"/>
+      <path d="M18 19l1.1 2.2 2.4.4-1.7 1.7.4 2.4-2.2-1.1-2.2 1.1.4-2.4-1.7-1.7 2.4-.4L18 19z"/>
+    </g>
+  </g>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="none" stroke="#ffffff" stroke-opacity=".75" stroke-width="2"/>
+</svg>
