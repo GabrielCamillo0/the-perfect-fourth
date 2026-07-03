@@ -9,7 +9,7 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://theperfectfourth.com",
   lemonStoreUrl: LEMON_STORE_URL,
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@theperfectfourth.com",
-  socialImage: "/images/hero-backyard-evening.webp"
+  socialImage: "/images/product/perfect-fourth-guide-cover.webp"
 } as const;
 
 export const BRAND = {
@@ -31,7 +31,7 @@ export const PRODUCTS = {
     cta: "Get the guide",
     description:
       "The core digital guide with planning timelines, menu frameworks, decor direction, safety prompts, and hosting checklists.",
-    image: "/images/product-guide-mockup.webp"
+    image: "/images/product/perfect-fourth-guide-cover.webp"
   },
   bundle: {
     key: "bundle",
@@ -45,7 +45,7 @@ export const PRODUCTS = {
     cta: "Get the bundle",
     description:
       "Everything in the guide plus printable menu cards, prep lists, hosting scripts, activity prompts, and keepsake templates.",
-    image: "/images/bundle-mockup.webp"
+    image: "/images/product/bundle-preview-composite.webp"
   }
 } as const;
 
@@ -58,54 +58,68 @@ export const CTA_COPY = {
   sticky: "Get the guide"
 } as const;
 
+export const PRODUCT_PAGE_FRAME = {
+  containerClassName:
+    "rounded-lg border border-[var(--color-line)] bg-white shadow-[0_12px_30px_rgba(24,33,43,0.06)]",
+  imageClassName: "object-contain p-2"
+} as const;
+
 export const IMAGES = {
   hero: {
     src: "/images/hero-backyard-evening.webp",
     alt: "Elegant backyard Fourth of July celebration at blue hour"
   },
   product: {
-    src: "/images/product-guide-mockup.webp",
-    alt: "Digital guide mockup on a tablet with planning sheets"
+    src: "/images/product/perfect-fourth-guide-cover.webp",
+    alt: "The Perfect Fourth 250th Anniversary Edition digital guide cover"
   },
   tablescape: {
-    src: "/images/gallery-tablescape.webp",
-    alt: "Premium Fourth of July tablescape with refined food styling"
+    src: "/images/product/printable-celebration-menu.webp",
+    alt: "Printable celebration menu page from the America 250 pack"
   },
   fireworks: {
-    src: "/images/gallery-public-fireworks.webp",
-    alt: "Guests watching distant public fireworks from a lawn gathering"
+    src: "/images/product/guide-fireworks-viewing.webp",
+    alt: "Public fireworks viewing plan page from The Perfect Fourth guide"
   },
   backyard: {
-    src: "/images/celebration-backyard-bbq.webp",
-    alt: "Elevated backyard barbecue setup with tasteful holiday details"
+    src: "/images/product/guide-backyard-style.webp",
+    alt: "Backyard celebration setup page from The Perfect Fourth guide"
   },
   rooftop: {
-    src: "/images/celebration-rooftop-cocktails.webp",
-    alt: "Rooftop cocktail gathering with skyline and distant fireworks"
+    src: "/images/product/guide-fireworks-outing.webp",
+    alt: "Public fireworks outing planning page from The Perfect Fourth guide"
   },
   poolside: {
-    src: "/images/celebration-poolside-brunch.webp",
-    alt: "Poolside Fourth of July brunch with resort-inspired styling"
+    src: "/images/product/printable-dessert-table-sign.webp",
+    alt: "Printable dessert table sign from the America 250 celebration pack"
   },
   timeline: {
-    src: "/images/timeline-planning-desk.webp",
-    alt: "Organized planning desk with holiday hosting timeline materials"
+    src: "/images/product/guide-timeline.webp",
+    alt: "Day-of celebration timeline page from The Perfect Fourth guide"
   },
   menu: {
-    src: "/images/menu-spread.webp",
-    alt: "Fourth of July menu spread with make-ahead dishes"
+    src: "/images/product/guide-menu-plan.webp",
+    alt: "Menu planning worksheet from The Perfect Fourth guide"
   },
   safety: {
-    src: "/images/safety-kit.webp",
-    alt: "Responsible sparkler and fireworks safety kit on an outdoor table"
+    src: "/images/product/guide-food-safety.webp",
+    alt: "Food safety and serving flow page from The Perfect Fourth guide"
   },
   memory: {
-    src: "/images/memory-keepsake.webp",
-    alt: "Keepsake guestbook and instant photos from a holiday celebration"
+    src: "/images/product/keepsake-memory-certificate.webp",
+    alt: "America 250 keepsake certificate page from the memory pack"
   },
   bundle: {
-    src: "/images/bundle-mockup.webp",
-    alt: "Premium digital product bundle with printable hosting templates"
+    src: "/images/product/bundle-preview-composite.webp",
+    alt: "The Perfect Fourth bundle with guide, game night, printable, and keepsake packs"
+  },
+  hostKit: {
+    src: "/images/product/printable-setup-checklist.webp",
+    alt: "Final setup checklist page from the America 250 printable pack"
+  },
+  experiences: {
+    src: "/images/product/game-night-conversation-cards.webp",
+    alt: "Conversation cards page from The American Celebration Game Night pack"
   }
 } as const;
 
@@ -127,6 +141,33 @@ export const PROBLEM_POINTS = [
   "The holiday has too many tiny decisions: food, timing, seating, activities, weather, safety, and cleanup.",
   "Most inspiration looks beautiful but does not tell you what to do first, what can be made ahead, or what to skip.",
   "The result is often an overstuffed party that looks festive but leaves the host managing details all night."
+] as const;
+
+export const PRODUCT_PREVIEWS = [
+  {
+    src: "/images/product/perfect-fourth-guide-cover.webp",
+    alt: "The Perfect Fourth 250th Anniversary Edition digital guide cover",
+    title: "The Perfect Fourth Guide",
+    caption: "250th Anniversary Edition"
+  },
+  {
+    src: "/images/product/american-celebration-game-night.webp",
+    alt: "The American Celebration Game Night printable pack cover",
+    title: "Game Night Pack",
+    caption: "Games and group activities"
+  },
+  {
+    src: "/images/product/america-250-printable-pack.webp",
+    alt: "America 250 printable celebration pack cover",
+    title: "Printable Celebration Pack",
+    caption: "Signs, menus, and host tools"
+  },
+  {
+    src: "/images/product/america-250-keepsake-pack.webp",
+    alt: "America 250 photo and memory keepsake pack cover",
+    title: "Photo & Memory Pack",
+    caption: "Keepsakes and guest prompts"
+  }
 ] as const;
 
 export const PRODUCT_FEATURES = [
@@ -151,7 +192,7 @@ export const GALLERY = [
   {
     title: "The host kit",
     description: "Safety, hydration, cleanup, and guest comfort planned before dusk.",
-    image: IMAGES.safety
+    image: IMAGES.hostKit
   }
 ] as const;
 

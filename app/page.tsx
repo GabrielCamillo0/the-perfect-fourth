@@ -31,6 +31,8 @@ import {
   MENU_SETS,
   PRODUCTS,
   PRODUCT_FEATURES,
+  PRODUCT_PAGE_FRAME,
+  PRODUCT_PREVIEWS,
   PROBLEM_POINTS,
   SAFETY_POINTS,
   SITE,
@@ -38,6 +40,10 @@ import {
 } from "@/lib/constants";
 
 const sectionPadding = "px-4 py-20 sm:px-6 lg:px-8";
+const productPreviewFrame = {
+  ...PRODUCT_PAGE_FRAME,
+  containerClassName: `aspect-[3/4] ${PRODUCT_PAGE_FRAME.containerClassName}`
+};
 
 function SectionHeader({
   kicker,
@@ -183,13 +189,37 @@ export default function HomePage() {
 
       <section id="inside" className={`${sectionPadding} bg-[var(--color-surface)] scroll-mt-24`}>
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <SafeImage
-            src={IMAGES.product.src}
-            alt={IMAGES.product.alt}
-            fill
-            sizes="(min-width: 1024px) 45vw, 100vw"
-            containerClassName="aspect-[3/2] rounded-lg"
-          />
+          <div className="grid gap-4">
+            <SafeImage
+              src={PRODUCT_PREVIEWS[0].src}
+              alt={PRODUCT_PREVIEWS[0].alt}
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              containerClassName={`aspect-[3/4] rounded-lg border border-[var(--color-line)] bg-white shadow-[0_18px_40px_rgba(24,33,43,0.08)]`}
+              imageClassName="object-contain p-2"
+            />
+            <div className="grid grid-cols-3 gap-3">
+              {PRODUCT_PREVIEWS.slice(1).map((preview) => (
+                <figure key={preview.title} className="grid gap-2">
+                  <SafeImage
+                    src={preview.src}
+                    alt={preview.alt}
+                    fill
+                    sizes="(min-width: 1024px) 14vw, 30vw"
+                    containerClassName="aspect-[3/4] rounded-md border border-[var(--color-line)] bg-white"
+                    imageClassName="object-contain p-1.5"
+                  />
+                  <figcaption>
+                    <p className="text-xs font-semibold text-[var(--color-ink)]">{preview.title}</p>
+                    <p className="text-[11px] leading-4 text-[var(--color-ink-soft)]">{preview.caption}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <p className="text-xs leading-5 text-[var(--color-ink-soft)]">
+              Preview pages from the actual digital files. Full guides and printables are delivered after checkout.
+            </p>
+          </div>
           <div>
             <SectionHeader
               kicker="The product"
@@ -237,7 +267,8 @@ export default function HomePage() {
                   alt={style.image.alt}
                   fill
                   sizes="(min-width: 1024px) 33vw, 100vw"
-                  containerClassName="aspect-[4/3] rounded-t-lg"
+                  containerClassName={`aspect-[3/4] rounded-t-lg border-b border-[var(--color-line)] bg-white`}
+                  imageClassName="object-contain p-2"
                 />
                 <div className="p-6">
                   <h3 className="font-serif text-2xl">{style.title}</h3>
@@ -278,7 +309,7 @@ export default function HomePage() {
             alt={IMAGES.timeline.alt}
             fill
             sizes="(min-width: 1024px) 45vw, 100vw"
-            containerClassName="aspect-[3/2] rounded-lg"
+            {...productPreviewFrame}
           />
         </div>
       </section>
@@ -290,7 +321,7 @@ export default function HomePage() {
             alt={IMAGES.menu.alt}
             fill
             sizes="(min-width: 1024px) 48vw, 100vw"
-            containerClassName="aspect-[3/2] rounded-lg"
+            {...productPreviewFrame}
           />
           <div>
             <SectionHeader
@@ -337,11 +368,11 @@ export default function HomePage() {
               })}
             </div>
             <SafeImage
-              src={IMAGES.fireworks.src}
-              alt={IMAGES.fireworks.alt}
+              src={IMAGES.experiences.src}
+              alt={IMAGES.experiences.alt}
               fill
               sizes="(min-width: 1024px) 48vw, 100vw"
-              containerClassName="aspect-[3/2] rounded-lg"
+              {...productPreviewFrame}
             />
           </div>
         </div>
@@ -354,7 +385,7 @@ export default function HomePage() {
             alt={IMAGES.safety.alt}
             fill
             sizes="(min-width: 1024px) 48vw, 100vw"
-            containerClassName="aspect-[3/2] rounded-lg"
+            {...productPreviewFrame}
           />
           <div>
             <p className="text-xs font-bold uppercase text-white/62">Safety</p>
@@ -395,7 +426,7 @@ export default function HomePage() {
             alt={IMAGES.memory.alt}
             fill
             sizes="(min-width: 1024px) 45vw, 100vw"
-            containerClassName="aspect-[3/2] rounded-lg"
+            {...productPreviewFrame}
           />
         </div>
       </section>
@@ -460,7 +491,7 @@ export default function HomePage() {
             alt={IMAGES.bundle.alt}
             fill
             sizes="(min-width: 1024px) 42vw, 100vw"
-            containerClassName="aspect-[3/2] rounded-lg"
+            {...productPreviewFrame}
           />
           <div>
             <SectionHeader

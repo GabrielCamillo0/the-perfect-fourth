@@ -2,7 +2,7 @@
 
 import { X, ZoomIn } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { GALLERY } from "@/lib/constants";
+import { GALLERY, PRODUCT_PAGE_FRAME } from "@/lib/constants";
 import { sendAnalyticsEvent } from "@/lib/tracking";
 import { SafeImage } from "@/components/SafeImage";
 
@@ -49,8 +49,8 @@ export function Gallery() {
               alt={item.image.alt}
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
-              containerClassName="aspect-[4/3] rounded-lg"
-              imageClassName="transition duration-500 group-hover:scale-105"
+              containerClassName={`aspect-[3/4] ${PRODUCT_PAGE_FRAME.containerClassName}`}
+              imageClassName={`${PRODUCT_PAGE_FRAME.imageClassName} transition duration-500 group-hover:scale-[1.02]`}
             />
             <div className="mt-4 flex items-start justify-between gap-3">
               <div>
@@ -97,7 +97,8 @@ export function Gallery() {
               fill
               priority
               sizes="100vw"
-              containerClassName="aspect-[3/2] rounded-lg"
+              containerClassName={`aspect-[3/4] max-h-[75vh] ${PRODUCT_PAGE_FRAME.containerClassName}`}
+              imageClassName={PRODUCT_PAGE_FRAME.imageClassName}
             />
           </div>
         ) : null}
